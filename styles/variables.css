@@ -6,9 +6,11 @@
 :root {
   --main-font: "IBM Plex mono", monospace, sans-serif;
   --main-font-size: 18px;
+  --main-line-height: 24px;
   --header-title-color: #DB00FF;
   --accent-color: #ff0070;
-  --accent-color-hover: rgb(255, 0, 112, .4); 
+  --accent-color-hover: rgb(255, 0, 112, .4);
+  --accent-text-color: #F1B2CE;
   --header-text-color: #000028;
   --cover-image-dark: url(./../images/cover-image-dark.png);
 }
