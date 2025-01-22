@@ -6,12 +6,15 @@
 :root {
   --main-font: "IBM Plex mono", monospace, sans-serif;
   --main-font-size: 18px;
-  --main-line-height: 24px;
+  --main-line-height: 23.4px;
   --title-shadow: 4px 4px 0 #ff0070;
   --header-title-color: #DB00FF;
   --accent-color: #ff0070;
   --accent-color-hover: rgb(255, 0, 112, .4);
   --accent-text-color: #F1B2CE;
   --header-text-color: #000028;
+  --title-text-color: #ff0070;
+  --subtitle-text-color: #ff0070;
+  --page-background-color: #000028;
   --cover-image-dark: url(./../images/cover-image-dark.png);
 }
