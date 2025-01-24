@@ -2,7 +2,7 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  position: relative;
+  /* position: relative; */
   font-family: var(--main-font);
   font-size: var(--main-font-size);
   background-attachment: fixed;
@@ -13,12 +13,12 @@
 .header {
   min-block-size: 100vh;
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  align-content: stretch;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
   background-image: var(--cover-image-dark);
   background-position: center;
   background-size: cover;
-  /* padding-inline: 8px; */
+  padding-inline: 10px;
 }
 
 .decorated-zone {
@@ -75,8 +75,8 @@
   position: relative;
   justify-self: end;
   align-self: center;
-  margin-block-start: 13px;
-  margin-inline-end: 8px;
+  /* margin-block-start: 13px; */
+  /* margin-inline: 10px; */
 }
 
 .header__theme-menu-list {
@@ -120,19 +120,13 @@
 
 .title {
   margin: auto;
-  margin-left: 0;
+  margin-inline-start: 0;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-weight: bold;
   color: var(--header-title-color);
   text-shadow: var(--title-shadow);
   line-height: 96px;
 }
-
-/* .header__title {
-  margin-block-start: 65px;
-  margin-block-end: 0;
-  clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-} */
 
 .header__text {
   block-size: min-content;
@@ -141,9 +135,9 @@
   color: var(--header-text-color);
   background-color: var(--accent-color);
   font-weight: bold;
-  /* margin-block-start: 40px; */
   margin-left: auto;
-  margin-block-end: 0;
+  margin-block-start: 0;
+  /* margin-inline-end: 0; */
 }
 
 .main-content:first-child {
@@ -153,9 +147,12 @@
 .main-content {
   padding-block-start: 50px;
   padding-inline: 8px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .section-title {
+  grid-column: 1 / 4;
   color: var(--title-text-color);
   font-size: var(--main-font-size);
   margin-block: 0;
@@ -167,10 +164,11 @@
   line-height: var(--main-line-height);
   color: var(--header-text-color);
   background-color: var(--accent-color);
-  margin-block-end: 0;
+  margin-block: 0 20px;
 }
 
 .cards {
+  grid-column: 1 / 4;
   display: grid;
   width: 100%;
   list-style: none;
@@ -192,6 +190,14 @@
   margin-block: 0;
 }
 
+.card__title_wide {
+  grid-column: 1 / 4;
+}
+
+.card__title_normal-weight {
+  font-weight: 400;
+}
+
 .card__text {
   font-size: var(--main-font-size);
   line-height: var(--main-line-height);
@@ -203,7 +209,8 @@
 }
 
 .images {
-  margin-block-start: 10px;
+  grid-column: 1 / 4;
+  /* margin-block-start: 10px; */
   display: grid;
   gap: 10px;
 }
@@ -217,39 +224,48 @@
 .footer {
   margin-block-start: 40px;
   display: grid;
+  align-content: center;
+  justify-content: center;
   height: 100vh;
 }
 
-.footer__title {
+/* .footer__title {
   margin: auto;
-}
+} */
 
 @media (width >= 376px) {
   /* .header {
-    block-size: 100vw;
-    max-block-size: 1024px;
+    pading: 20px;
   } */
 
-  .header__theme-menu {
+  /* .header__theme-menu {
     margin-block-start: 17vw;
     margin-inline: 2.6vw;
-  }
+  } */
 
-  .header__title {
+  /* .header__title {
     margin-block-start: 16vw;
-  }
+  } */
 
-  .header__text {
+  /* .header__text {
     margin-inline-end: 2.6vw;
-  }
+  } */
   
-  .footer {
+  /* .footer {
     block-size: 150vw;
     max-block-size: 1024px;
-  }
+  } */
 }
 
 @media (width >= 720px) {
+  .header {
+    padding-inline-start: 0;
+    padding-inline-end: 20px;
+  }
+
+  /* .header__text {
+    margin-inline-end: 10px;
+  } */
 
   .main-content:first-child {
     padding-block-start: 60px;
@@ -258,33 +274,32 @@
   .main-content {
     padding-inline: 20px;
     padding-block-start: 80px;
-  }
-
-  .title {
-    margin: 0;
-    align-self: center;
+    gap: 20px;
   }
 
   .cards-top {
+    grid-row: 1;
+    grid-column: 1 / 4;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr;
     gap: 20px;
   }
 
   .cards-midle {
+    grid-column: 1 / 4;
+    grid-row: 2;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat (4, min-content);
     gap: 20px;
   }
 
   .cards-bottom {
-    grid-template-columns: minmax(min-content, 236px) 2fr;
-    grid-template-rows: repeat (6, min-content);
+    grid-row: 1;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
   .card-top {
-    grid-column: 2 / span 3;
+    grid-column: 2 / 4;
     margin: 0;
   }
 
@@ -294,23 +309,24 @@
   }
 
   .card-bottom {
-    grid-column: 2 / 5;
+    grid-column: 2 / 4;
     margin: 0;
   }
 
   .section-subtitle {
     grid-column: 2 / span 3;
-    margin-block: 0;
+    margin-block: 0 20px;
   }
 
   .section-title {
-    grid-row: 1 / span 2;
+    grid-row: 1;
+    grid-column: 1;
   }
 
   .images {
     /* max-height: 780px; */
     /* max-width: 728px; */
-    margin-block-start: 20px;
+    /* margin-block-start: 20px; */
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, minmax(min-content, max-content));
     gap: 20px;
@@ -347,7 +363,7 @@
 
 @media (width >= 900px) {
   .header {
-    max-height: 768px;
+    padding: 0;
   }
 
   .header__theme-menu {
@@ -372,9 +388,8 @@
   }
 
   .header__text {
-    max-width: 491px;
-    /* margin-block-start: 50px; */
     margin-inline-end: 20px;
+    max-width: 491px;
   }
 
   .main-content:first-child {
@@ -386,31 +401,20 @@
   }
 
   .cards-midle {
-    grid-template-rows: 1fr;
+    grid-column: 1 / 4;
+    grid-row: 2;
   }
 
   .cards-bottom {
-    grid-template-columns: minmax(min-content, 314px) 2fr;
+    /* grid-template-columns: minmax(min-content, 314px) 2fr; */
   }
 
-
-  .card-midle:nth-child(2) {
-    grid-column: 1;
-    grid-row: 3;
+  .card-midle {
+    grid-column: auto; 
   }
 
-  .card-midle:nth-child(3) {
-    grid-column: 2;
-    grid-row: 3;
-  }
-
-  .card-midle:nth-child(4) {
-    grid-column: 3;
-    grid-row: 3;
-  }
-
-  .footer {
+  /* .footer {
     max-height: 768px;
     align-content: center;
-  }
+  } */
 }
