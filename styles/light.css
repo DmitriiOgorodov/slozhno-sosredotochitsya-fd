@@ -3,6 +3,32 @@
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-font: "IBM Plex mono", monospace, sans-serif;
+    --main-font-size: 18px;
+    --main-line-height: 23.4px;
+    --title-shadow: 4px 4px 0 #FF8DCB;
+    --header-title-color: #FFC2E6;
+    --accent-color: #FF8DCB;
+    /* --accent-color-hover: rgb(255, 0, 112, .4); */
+    --accent-text-color: #353430;
+    --header-text-color: #353430;
+    --title-text-color: #353430;
+    --subtitle-text-color: #353430;
+    --page-background-color: #FFF1F7;
+    --menu-button-color: #353430;
+    --menu-button-color-hover: rgb(53, 52, 48, .4);
+    --decorated-zone-color: #353430;
+    --link-shadow-color: #FF8DCB;
+    --link-focus-visible-color: #353430;
+    --cover-image-dark: url(./../images/cover-image-light.png);
+  }
+
+  .rec-icon {
+    display: none;
+  }
+}
 
 :root.theme-light {
   /* сохраните этот селектор в приведённом виде.
