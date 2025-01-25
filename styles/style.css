@@ -283,14 +283,14 @@
     gap: 20px;
   }
 
-  .cards-top {
+  .cards-why {
     grid-row: 1;
     grid-column: 1 / 4;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
-  .cards-midle {
+  .cards-causes {
     grid-column: 1 / 4;
     grid-row: 2;
     grid-template-columns: repeat(3, 1fr);
@@ -298,23 +298,23 @@
     gap: 20px;
   }
 
-  .cards-bottom {
+  .cards-advices {
     grid-row: 1;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
-  .card-top {
+  .card-why {
     grid-column: 2 / 4;
     margin: 0;
   }
 
-  .card-midle {
+  .card-causes {
     grid-column: 1 / span 3;
     margin: 0;
   }
 
-  .card-bottom {
+  .card-advices {
     grid-column: 2 / 4;
     margin: 0;
   }
@@ -402,12 +402,12 @@
     padding-block-start: 80px;
   }
 
-  .cards-midle {
+  .cards-causes {
     grid-column: 1 / 4;
     grid-row: 2;
   }
 
-  .card-midle {
+  .card-causes {
     grid-column: auto; 
   }
 }
