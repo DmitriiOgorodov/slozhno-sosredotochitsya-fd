@@ -140,7 +140,7 @@
   background-color: var(--accent-color);
   font-weight: bold;
   margin-left: auto;
-  margin-block-start: 0;
+  margin-block: 0 10px;
   /* margin-inline-end: 0; */
 }
 
@@ -265,6 +265,10 @@
   .header {
     padding-inline-start: 0;
     padding-inline-end: 20px;
+  }
+
+  .header__text {
+    margin-block-end: 18px;
   }
 
   .decorated-zone::before {
@@ -427,7 +431,7 @@
   }
 
   .card-causes {
-    grid-column: auto; 
+    grid-column: auto;
   }
 
   .section-subtitle {
