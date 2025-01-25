@@ -3,10 +3,15 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   /* position: relative; */
-  font-family: var(--main-font);
+  font-family: var(--main-font), monospace, sans-serif;
   font-size: var(--main-font-size);
   background-attachment: fixed;
+  background-clip: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   background-color: var(--page-background-color);
+  background-image: var(--cover-image-dark);
   margin: 0;
 }
 
@@ -15,7 +20,7 @@
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   align-items: center;
-  background-image: var(--cover-image-dark);
+  /* background-image: var(--cover-image-dark); */
   background-position: center;
   background-size: cover;
   padding-inline: 10px;
@@ -294,7 +299,7 @@
     grid-column: 1 / 4;
     grid-row: 2;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat (4, min-content);
+    /* grid-template-rows: repeat(4, min-content); */
     gap: 20px;
   }
 
@@ -373,7 +378,7 @@
     margin-inline: auto;
     margin-top: 0;
     align-self: start;
-    width: 230px;
+    /* width: 230px; */
     justify-content: center;
   }
 
