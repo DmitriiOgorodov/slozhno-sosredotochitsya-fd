@@ -28,6 +28,7 @@
   --cover-image-dark: url(./../images/cover-image-dark.png);
 }
 
-.theme-dark .page {
+.theme-dark .rec-icon {
   /* Вам также нужно будет написать ряд подобных селекторов */
+  display: flex;
 }
